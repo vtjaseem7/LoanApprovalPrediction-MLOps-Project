@@ -412,6 +412,6 @@ The model should be retrained when:
 
 Data Analyst | Data Science & MLOps Enthusiast
 
-LinkedIn: <YOUR_LINKEDIN_URL>
+LinkedIn: https://www.linkedin.com/in/jaseem-vt-835ba330a/
 
 GitHub: https://github.com/vtjaseem7

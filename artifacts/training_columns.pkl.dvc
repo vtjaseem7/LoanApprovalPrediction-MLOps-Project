@@ -1,0 +1,5 @@
+outs:
+- md5: 6150d964f120449fd78e41bfcd08cba6
+  size: 550
+  hash: md5
+  path: training_columns.pkl

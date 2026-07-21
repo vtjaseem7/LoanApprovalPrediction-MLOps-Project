@@ -1,0 +1,6 @@
+[core]
+    remote = storage
+['remote "myremote"']
+    url = gdrive://1XoR1xs9Fn6bZ7eYfUUnbUwcpCEjfMhq1
+['remote "storage"']
+    url = s3://loan-approval-dvc7

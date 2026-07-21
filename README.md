@@ -331,13 +331,13 @@ Google Cloud Run
 Public API Endpoint:
 
 ```text
-<PASTE_YOUR_CLOUD_RUN_URL_HERE>
+https://loan-prediction-api-284234578893.asia-south1.run.app
 ```
 
 Swagger Documentation:
 
 ```text
-<PASTE_YOUR_CLOUD_RUN_URL_HERE>/docs
+https://loan-prediction-api-284234578893.asia-south1.run.app/docs
 ```
 
 ---

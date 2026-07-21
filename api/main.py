@@ -1,12 +1,13 @@
 import joblib
 import pandas as pd
-
+import os
 from fastapi import FastAPI, HTTPException
 
 from api.schemas import (
     LoanRequest,
     PredictionResponse
 )
+from datetime import datetime
 
 from src.predict import make_predict
 
@@ -67,6 +68,38 @@ def predict(data: LoanRequest):
         probability = model.predict_proba(
             input_df
         )[0][1]
+
+        log_file = "logs/predictions.csv"
+
+        os.makedirs("logs", exist_ok=True)
+
+        log_data = {
+            "timestamp": datetime.now(),
+            "prediction": int(prediction),
+            "probability": float(probability),
+            "result": (
+                "Approved"
+                if prediction == 1
+                else "Rejected"
+            )
+        }
+
+        if os.path.exists(log_file):
+
+            pd.DataFrame([log_data]).to_csv(
+                log_file,
+                mode="a",
+                header=False,
+                index=False
+            )
+
+        else:
+
+            pd.DataFrame([log_data]).to_csv(
+                log_file,
+                index=False
+            )
+
 
         return PredictionResponse(
             prediction=int(prediction),
